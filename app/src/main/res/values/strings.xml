@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TicTacToe League</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_tictactoe_fragment">Hello blank Tic Tac Toe fragment</string>
+    <string name="hello_blank_leaderboard_fragment">Hello blank leaderboard fragment</string>
+</resources>
