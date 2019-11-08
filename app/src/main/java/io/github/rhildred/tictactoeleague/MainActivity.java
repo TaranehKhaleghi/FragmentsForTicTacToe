@@ -14,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // you will get the action from the menu in the activity
+        // to send it to the fragment (main_fragment in our case)
+        // TicTacToeFragment fragment = (TicTacToeFragment) getFragmentManager().findFragmentById(R.id.main_fragment);
+        // fragment.<specific_function_name>();
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
