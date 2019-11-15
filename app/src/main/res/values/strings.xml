@@ -6,4 +6,11 @@
     <string name="hello_blank_leaderboard_fragment">Hello blank leaderboard fragment</string>
     <string name="scoreboard">Scoreboard</string>
     <string name="restart">Restart</string>
+    <string name="items_title">Players</string>
+    <string name="name_title">Name</string>
+    <string name="wins_title">Wins</string>
+    <string name="ties_title">Ties</string>
+    <string name="losses_title">Losses</string>
+    <string name="player_2">Player 2:</string>
+    <string name="player_1">Player 1:</string>
 </resources>
