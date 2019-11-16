@@ -63,7 +63,7 @@ public class LeaderBoardFragment extends Fragment
     }
     private void updateDisplay(){
         // create a List of Map<String, ?> objects
-        ArrayList<HashMap<String, String>> data = db.getPlayers();
+        ArrayList<Player> data = db.getPlayers();
 
         // create the resource, from, and to variables
         int resource = R.layout.listview_item;

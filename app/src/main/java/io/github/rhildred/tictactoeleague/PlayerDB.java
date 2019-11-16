@@ -68,13 +68,13 @@ public class PlayerDB {
             db.close();
     }
 
-    ArrayList<HashMap<String, String>> getPlayers(){
-        ArrayList<HashMap<String, String>> data =
-                new ArrayList<HashMap<String, String>>();
+    ArrayList<Player> getPlayers(){
+        ArrayList<Player> data =
+                new ArrayList<Player>();
         openReadableDB();
         Cursor cursor = db.rawQuery("SELECT name, wins, losses, ties FROM players",null );
         while (cursor.moveToNext()) {
-            HashMap<String, String> map = new HashMap<String, String>();
+            Player map = new Player();
             map.put("name", cursor.getString(0));
             map.put("wins", cursor.getString(1));
             map.put("losses", cursor.getString(2));
