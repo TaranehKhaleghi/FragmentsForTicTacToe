@@ -6,11 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by rhildred on 11/8/2016.
@@ -68,13 +65,13 @@ public class PlayerDB {
             db.close();
     }
 
-    ArrayList<Player> getPlayers(){
-        ArrayList<Player> data =
-                new ArrayList<Player>();
+    ArrayList<HashMapToString> getPlayers(){
+        ArrayList<HashMapToString> data =
+                new ArrayList<HashMapToString>();
         openReadableDB();
         Cursor cursor = db.rawQuery("SELECT id, name, wins, losses, ties FROM players",null );
         while (cursor.moveToNext()) {
-            Player map = new Player();
+            HashMapToString map = new HashMapToString("name");
             map.put("id", cursor.getString(0));
             map.put("name", cursor.getString(1));
             map.put("wins", cursor.getString(2));

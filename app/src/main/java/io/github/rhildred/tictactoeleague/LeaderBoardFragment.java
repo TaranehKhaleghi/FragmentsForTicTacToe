@@ -12,7 +12,6 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 /**
@@ -63,7 +62,7 @@ public class LeaderBoardFragment extends Fragment
     }
     private void updateDisplay(){
         // create a List of Map<String, ?> objects
-        ArrayList<Player> data = db.getPlayers();
+        ArrayList<HashMapToString> data = db.getPlayers();
 
         // create the resource, from, and to variables
         int resource = R.layout.listview_item;

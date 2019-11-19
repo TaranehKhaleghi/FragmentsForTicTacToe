@@ -1,7 +1,5 @@
 package io.github.rhildred.tictactoeleague;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -49,9 +47,9 @@ public class TicTacToeFragment extends Fragment implements AdapterView.OnItemSel
 
     private void updateDisplay() {
         // create a List of Map<String, ?> objects
-        ArrayList<Player> data = db.getPlayers();
-        ArrayAdapter<Player> adapter =
-                new ArrayAdapter<Player>(this.getContext(),  android.R.layout.simple_spinner_dropdown_item, data);
+        ArrayList<HashMapToString> data = db.getPlayers();
+        ArrayAdapter<HashMapToString> adapter =
+                new ArrayAdapter<HashMapToString>(this.getContext(),  android.R.layout.simple_spinner_dropdown_item, data);
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
 
         spinner1.setAdapter(adapter);
@@ -64,7 +62,7 @@ public class TicTacToeFragment extends Fragment implements AdapterView.OnItemSel
     @Override
     public void onItemSelected(AdapterView<?> parent, View v, int position,
                                long id) {
-        ArrayList<Player> data = db.getPlayers();
+        ArrayList<HashMapToString> data = db.getPlayers();
         if(v.getId() == this.spinner1.getId()){
             this.sPlayer1 = data.get(position).get("id");
         }else{
