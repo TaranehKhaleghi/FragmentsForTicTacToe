@@ -72,13 +72,14 @@ public class PlayerDB {
         ArrayList<Player> data =
                 new ArrayList<Player>();
         openReadableDB();
-        Cursor cursor = db.rawQuery("SELECT name, wins, losses, ties FROM players",null );
+        Cursor cursor = db.rawQuery("SELECT id, name, wins, losses, ties FROM players",null );
         while (cursor.moveToNext()) {
             Player map = new Player();
-            map.put("name", cursor.getString(0));
-            map.put("wins", cursor.getString(1));
-            map.put("losses", cursor.getString(2));
-            map.put("ties", cursor.getString(3));
+            map.put("id", cursor.getString(0));
+            map.put("name", cursor.getString(1));
+            map.put("wins", cursor.getString(2));
+            map.put("losses", cursor.getString(3));
+            map.put("ties", cursor.getString(4));
             data.add(map);
         }
         if (cursor != null)
