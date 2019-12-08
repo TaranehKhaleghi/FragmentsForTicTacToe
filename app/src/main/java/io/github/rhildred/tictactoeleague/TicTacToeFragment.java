@@ -40,6 +40,8 @@ public class TicTacToeFragment extends Fragment implements AdapterView.OnItemSel
         // this.getActivity may also be helpful for communicating between fragments
         this.spinner1 = (Spinner) view.findViewById(R.id.player1);
         this.spinner2 = (Spinner) view.findViewById(R.id.player2);
+        spinner1.setOnItemSelectedListener(this);
+        spinner2.setOnItemSelectedListener(this);
         db = new PlayerDB(this.getContext());
         updateDisplay();
         return view;
@@ -63,7 +65,7 @@ public class TicTacToeFragment extends Fragment implements AdapterView.OnItemSel
     public void onItemSelected(AdapterView<?> parent, View v, int position,
                                long id) {
         ArrayList<HashMapToString> data = db.getPlayers();
-        if(v.getId() == this.spinner1.getId()){
+        if(parent.getId() == this.spinner1.getId()){
             this.sPlayer1 = data.get(position).get("id");
         }else{
             this.sPlayer2 = data.get(position).get("id");
